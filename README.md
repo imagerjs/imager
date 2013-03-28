@@ -30,7 +30,7 @@ So if you have a variant, say `thumb`, then you can access the image by `cdnUri+
   If you are using express, you will recieve all the form files in `req.files`.
 
   ```js
-  imager.upload(req.files.image, function(err, cdnUri, files) {
+  imager.upload([req.files.image], function(err, cdnUri, files) {
       // do your stuff
   }, 'projects')
   ```
