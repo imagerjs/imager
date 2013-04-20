@@ -16,7 +16,7 @@
   "dependencies": {
     "gm": "1.4.1",
     "cloudfiles": "0.3.3",
-    "knox": "0.3.1",
+    "knox": "0.7.x",
     "mime": "1.2.5",
     "async": "0.1.22",
     "underscore": "1.3.3"
