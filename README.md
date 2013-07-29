@@ -16,6 +16,7 @@ Checkout the example config file `imager-example.js` in the repo
 
 ```js
 var Imager = require('imager');
+    // See https://github.com/madhums/node-imager/blob/master/imager-example.js for example configuration
   , imagerConfig = require('path/to/imager-config.js')
   , imager = new Imager(imagerConfig, 'Rackspace') // or 'S3' for amazon
 ```
