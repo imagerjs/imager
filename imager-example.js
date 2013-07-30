@@ -34,7 +34,8 @@ module.exports = {
       secret: 'SECRET',
       bucket: 'BUCKET_NAME',
       storageClass: 'REDUCED_REDUNDANCY'
-    }
+    },
+    uploadDirectory: 'images/uploads/'
   },
 
   debug: true
