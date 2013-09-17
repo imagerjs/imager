@@ -33,7 +33,8 @@ module.exports = {
       key: 'API_KEY',
       secret: 'SECRET',
       bucket: 'BUCKET_NAME',
-      storageClass: 'REDUCED_REDUNDANCY'
+      storageClass: 'REDUCED_REDUNDANCY',
+    //cdn: 'CDN_URL' //optional do not include 'http://'  
     },
     uploadDirectory: 'images/uploads/'
   },
