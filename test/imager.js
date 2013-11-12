@@ -1,3 +1,4 @@
+
 module.exports = {
   variants: {
     items: {
@@ -21,12 +22,14 @@ module.exports = {
   },
 
   storage: {
+    Local: {
+      path: '/tmp',
+      mode: 0777
+    },
     Rackspace: {
-      auth: {
-        username: "USERNAME",
-        apiKey: "API_KEY",
-        host: "lon.auth.api.rackspacecloud.com"
-      },
+      username: "USERNAME",
+      apiKey: "API_KEY",
+      authUrl: "https://lon.auth.api.rackspacecloud.com",
       container: "CONTAINER_NAME"
     }
   },

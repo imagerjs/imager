@@ -21,13 +21,15 @@ module.exports = {
   },
 
   storage: {
+    Local: {
+      path: "/var/www/"
+    },
     Rackspace: {
-      auth: {
-        username: "USERNAME",
-        apiKey: "API_KEY",
-        host: "lon.auth.api.rackspacecloud.com"
-      },
-      container: "CONTAINER_NAME"
+      username: "USERNAME",
+      apiKey: "API_KEY",
+      authUrl: "https://lon.auth.api.rackspacecloud.com"
+      container: "CONTAINER_NAME",
+      region: "REGION_NAME"
     },
     S3: {
       key: 'API_KEY',

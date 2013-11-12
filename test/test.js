@@ -35,12 +35,13 @@ describe('new Imager()', function () {
     }).should.throw('Please specify a storage')
   })
 
-  it('given proper config - should create the instance', function () {
-    var imager = new Imager(imagerConfig, 'Rackspace')
+  it('given proper config - should create the instances', function () {
+    var imager = new Imager(imagerConfig, ['Local','Rackspace'])
 
     imager.config.should.have.property('variants')
     imager.config.should.have.property('storage')
-    should.strictEqual('Rackspace', imager.storage)
+    should.strictEqual('Local', imager.storage[0])
+    should.strictEqual('Rackspace', imager.storage[1])
     imager.uploadedFiles.should.be.empty
   })
 })
@@ -86,21 +87,6 @@ describe('Imager', function () {
         }).should.not.throw()
       })
 
-      describe('With invalid username/secret', function () {
-        it('should throw with incorrect key/secret', function (done) {
-          var imager = new Imager(imagerConfig, 'Rackspace')
-
-          // unset the username
-          imager.config.storage.Rackspace.auth.username = 'xyz123'
-
-          imager.upload(files, function (err, cdnUri, uploaded) {
-            should.exist(err)
-            err.toString().should.equal('Error: Cannot make Rackspace request if not authorized')
-            done()
-          }, 'items')
-        })
-      })
-
       describe('With valid username/secret', function () {
         it('should upload the images to the cloud', function (done) {
           var imager = new Imager(imagerConfig, 'Rackspace')
@@ -116,6 +102,21 @@ describe('Imager', function () {
             uploaded.should.have.lengthOf(2)
             */
 
+            done()
+          }, 'items')
+        })
+      })
+
+      describe('With invalid username/secret', function () {
+        it('should throw with incorrect key/secret', function (done) {
+          var imager = new Imager(imagerConfig, 'Rackspace')
+
+          // unset the username
+          imager.config.storage.Rackspace.username = 'xyz123'
+
+          imager.upload(files, function (err, cdnUri, uploaded) {
+            should.exist(err)
+            err.statusCode.should.equal(401)
             done()
           }, 'items')
         })
