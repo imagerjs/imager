@@ -1,3 +1,15 @@
-.DS_Store
-node_modules/*
+########################
+# node.js / npm
+########################
+node_modules
 npm-debug.log
+
+########################
+# misc / editors
+########################
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
