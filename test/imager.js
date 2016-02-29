@@ -18,7 +18,7 @@ exports.variants = {
       }
     },
     large: {
-      origianl: true  // upload original image without image processing
+      original: true  // upload original image without image processing
     }
   }
 };
