@@ -7,6 +7,9 @@ module.exports = {
         mini : '300x200',
         preview: '800x600'
       },
+      original: {
+        same: true
+      },
       crop: {
         thumb: '200x200'
       },
